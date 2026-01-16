@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD04V>
-    <ROLLNAME>ZBC_MIMETYPE</ROLLNAME>
+    <ROLLNAME>ZBC_MIMETYPE7</ROLLNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>CHAR128</DOMNAME>
     <HEADLEN>55</HEADLEN>
