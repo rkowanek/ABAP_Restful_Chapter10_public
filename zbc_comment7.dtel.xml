@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD04V>
-    <ROLLNAME>ZBC_COMMENT</ROLLNAME>
+    <ROLLNAME>ZBC_COMMENT7</ROLLNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>ZBC_COMMENT</DOMNAME>
     <HEADLEN>55</HEADLEN>
