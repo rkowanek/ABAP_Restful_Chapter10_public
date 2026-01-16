@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD04V>
-    <ROLLNAME>ZBC_STATUS</ROLLNAME>
+    <ROLLNAME>ZBC_STATUS7</ROLLNAME>
     <DDLANGUAGE>D</DDLANGUAGE>
     <DOMNAME>ZBC_STATUS</DOMNAME>
     <HEADLEN>55</HEADLEN>
