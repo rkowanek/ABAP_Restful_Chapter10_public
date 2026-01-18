@@ -1,15 +1,15 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Zertifikatsverwaltung Interface View'
+@EndUserText.label: 'Certificates Interface View'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define root view entity ZI_Certificate
-  as select from zbca_certificate as Certificate
-  composition [0..*] of ZI_CertificateState as _CertificateState
+define root view entity ZI_Certificate7
+  as select from zbca_certificat7 as Certificate
+  composition [0..*] of ZI_CertificateState7 as _CertificateState
   association [0..1] to I_ProductText       as _ProductText on  $projection.Product   = _ProductText.Product
                                                             and _ProductText.Language = $session.system_language
   association [0..1] to ZI_Status_VH        as _StatusText  on  $projection.CertificationStatus = _StatusText.Low
@@ -68,3 +68,4 @@ define root view entity ZI_Certificate
       _ProductText,
       _StatusText
 }
+
