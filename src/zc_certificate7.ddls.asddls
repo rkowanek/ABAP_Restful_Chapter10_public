@@ -2,9 +2,9 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Search.searchable: true
 @Metadata.allowExtensions: true
-define root view entity ZC_Certificate
+define root view entity ZC_Certificate7
   provider contract transactional_query
-  as projection on ZI_Certificate as Certificate
+  as projection on ZI_Certificate7 as Certificate
 {
   key     CertUUID,
 
@@ -42,3 +42,4 @@ define root view entity ZC_Certificate
 
           _ProductText
 }
+
