@@ -1,14 +1,14 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Zertifikatsverwaltung Status Interface View'
+@EndUserText.label: 'Certificate Status Interface View'
 @Metadata.ignorePropagatedAnnotations: true
 @ObjectModel.usageType:{
     serviceQuality: #X,
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define view entity ZI_CertificateState
-  as select from zbca_certi_state as CertificateState
+define view entity ZI_CertificateState7
+  as select from zbca_certi_stat7 as CertificateState
   association to parent ZI_Certificate as _Certificate on $projection.CertUUID = _Certificate.CertUUID
 
 {
@@ -29,3 +29,4 @@ define view entity ZI_CertificateState
       _Certificate
 
 }
+
