@@ -1,4 +1,4 @@
-CLASS zcl_certi_service DEFINITION
+CLASS zcl_certi_servic7 DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -13,7 +13,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_certi_service IMPLEMENTATION.
+CLASS zcl_certi_servic7 IMPLEMENTATION.
 
   METHOD if_sadl_exit_calc_element_read~calculate.
 
