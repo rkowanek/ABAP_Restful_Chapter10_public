@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Status',
+                typeNamePlural: 'Status',
+                title: { type: #STANDARD, label: 'Status', value: 'Status' } } }
+annotate entity ZC_CertificateState with
+{
+
+  @UI.facet: [ { id:            'Status',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE
+                 }  ]
+
+  @UI.hidden: true
+  StateUUID;
+
+  @UI.hidden: true
+  CertUUID;
+
+  @UI.hidden: true
+  Product;
+  @UI: { lineItem:       [ { position: 10 } ],
+         identification: [ { position: 10 } ] }
+  Version;
+  @UI: { lineItem:       [ { position: 20 } ],
+         identification: [ { position: 20 } ] }
+  Status;
+  @UI: { lineItem:       [ { position: 30, label: 'vorheriger Status' } ],
+         identification: [ { position: 30, label: 'vorheriger Status' } ] }
+  StatusOld;
+  @UI: { lineItem:       [ { position: 40, label: 'zuletzt geändert durch' } ],
+         identification: [ { position: 40, label: 'zuletzt geändert durch' } ] }
+  LastChangedBy;
+  @UI: { lineItem:       [ { position: 50, label: 'zuletzt geändert' } ],
+         identification: [ { position: 50, label: 'zuletzt geändert' } ] }
+  LastChangedAt;
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+}

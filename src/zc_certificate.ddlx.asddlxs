@@ -1,0 +1,92 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Zertifikatsverwaltung',
+                typeNamePlural: 'Zertifikate',
+                title: { type: #STANDARD, label: 'Zertifikate', value: 'Product' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Product', direction:  #DESC }] }] }
+
+annotate entity ZC_Certificate with
+{
+  @UI.facet: [
+                /* Header Data */
+              {
+                purpose:    #HEADER,
+                type:       #FIELDGROUP_REFERENCE,
+                importance: #HIGH,
+                position:   1,
+                label:      'Technische Daten',
+                targetQualifier: 'Kopfdaten'
+              },
+
+              { id:              'Certificate',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Zertifikatsverwaltung',
+                 position:        10 },
+              {
+                 purpose:    #STANDARD,
+                 type:       #FIELDGROUP_REFERENCE,
+                 importance: #HIGH,
+                 position:   20,
+                 targetQualifier: 'Detail',
+                 label: 'Detailinfo'
+              },
+              { id:              'CertificateState',
+                purpose:         #STANDARD,
+                type:            #LINEITEM_REFERENCE,
+                label:           'Statusänderungen',
+                position:        40,
+                targetElement:   '_CertificateState'
+              }  ]
+  @UI.hidden: true
+  CertUUID;
+
+  @UI: {  lineItem:       [ { position: 10 } ],
+          identification: [ { position: 10 } ],
+          selectionField: [ { position: 10 } ] }
+  Product;
+  @UI: {  lineItem:       [ { position: 20, label : 'Materialbezeichnung' } ],
+          identification: [ { position: 20 } ]
+          }
+  ProductName;
+  @UI: {  lineItem:       [ { position: 30 },
+        { type: #FOR_ACTION, dataAction: 'newVersion', label: 'Neue Version' },
+        { type: #FOR_ACTION, dataAction: 'releaseVersion', label: 'Version aktivieren' },
+        { type: #FOR_ACTION, dataAction: 'archiveVersion', label: 'Version dekativieren' }
+  ],
+          fieldGroup: [ { qualifier: 'Kopfdaten',position: 30 }  ],
+          selectionField: [ { position: 30 } ]
+          }
+  Version;
+  @UI: {  lineItem:       [ { position: 40, criticality: 'Criticality', label: 'Status' } ],
+          fieldGroup: [ { qualifier: 'Kopfdaten',position: 40, label: 'Status', criticality: 'Criticality' }  ],
+          selectionField: [ { position: 40 } ] }
+  StatusText;
+
+
+  @UI: {  lineItem:       [ { position: 50 } ]}
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 10 }  ]
+  CertificateCe; 
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 20, label: 'Anlage für CE-Kennzeichnung' }  ]
+  AttachmentCE;
+  
+  @UI: {  lineItem:       [ { position: 60 } ] }
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 30 }  ]          
+  CertificateGs;
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 40, label: 'Anlage für GS-Siegel' }  ]
+  AttachmentGS;
+
+  @UI: {  lineItem:       [ { position: 90 } ]}
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 50 }  ]  
+  CertificateTuev;
+  @UI.fieldGroup: [ { qualifier: 'Detail', position: 60, label: 'Anlage für TÜV-Zertifizierung' }  ]  
+  AttachmentTuev;
+
+  @UI: {  lineItem:       [ { position: 190, label : 'Materialbezeichnung' } ],
+          identification: [ { position: 30, label : 'Materialbezeichnung' } ]
+          }
+  ProductText;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
