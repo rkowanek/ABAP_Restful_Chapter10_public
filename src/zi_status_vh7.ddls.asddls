@@ -7,7 +7,7 @@
     sizeCategory: #S,
     dataClass: #MIXED
 }
-define view entity ZI_Status_VH
+define view entity ZI_Status_VH7
   as select from ZI_DOMAIN_VALUE_VH
 {
   key  Low,
@@ -19,3 +19,4 @@ define view entity ZI_Status_VH
 }
 where
   ZI_DOMAIN_VALUE_VH.DomainName = 'ZBC_STATUS'
+
