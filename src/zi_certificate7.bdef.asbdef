@@ -3,8 +3,8 @@ strict ( 2 );
 with draft;
 
 
-define behavior for ZI_Certificate alias Certificate
-persistent table zbca_certificate
+define behavior for ZI_Certificate7 alias Certificate
+persistent table zbca_certificat7
 draft table zbcd_certificate
 lock master total etag LocalLastChangedAt
 etag master LocalLastChangedAt
@@ -36,7 +36,7 @@ authorization master ( global )
   }
 
 
-  mapping for zbca_certificate corresponding
+  mapping for zbca_certificat7 corresponding
   {
     CertUUID = cert_uuid;
     Product = matnr;
@@ -58,8 +58,8 @@ authorization master ( global )
 
 }
 
-define behavior for ZI_CertificateState alias CertificateState
-persistent table zbca_certi_state
+define behavior for ZI_CertificateState7 alias CertificateState
+persistent table zbca_certi_stat7
 draft table zbcd_certi_state
 lock dependent by _Certificate
 etag master LocalLastChangedAt
@@ -73,7 +73,7 @@ authorization dependent by _Certificate
   field ( numbering : managed, readonly ) StateUUID;
   field ( readonly ) CertUUID;
 
-  mapping for zbca_certi_state corresponding
+  mapping for zbca_certi_stat7 corresponding
   {
     StateUUID = state_uuid;
     CertUUID = cert_uuid;
