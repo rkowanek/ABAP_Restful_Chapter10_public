@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DDLS>
-    <DDLNAME>ZI_STATUS_VH</DDLNAME>
-    <DDLANGUAGE>D</DDLANGUAGE>
-    <DDTEXT>Wertehilfe für Status</DDTEXT>
+    <DDLNAME>ZI_STATUS_VH7</DDLNAME>
+    <DDLANGUAGE>E</DDLANGUAGE>
+    <DDTEXT>Search help for Status</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>
