@@ -1,0 +1,29 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZC_Certificate alias Certificae
+{
+  use create;
+  use update;
+  use delete;
+
+  use action newVersion;
+  use action releaseVersion;
+  use action archiveVersion;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action Resume;
+
+  use association _CertificateState { with draft; }
+}
+
+define behavior for ZC_CertificateState alias CertificaeState
+{
+  use delete;
+
+  use association _Certificate { with draft; }
+}
