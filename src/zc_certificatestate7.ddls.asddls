@@ -2,7 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
 define view entity ZC_CertificateState
-as projection on ZI_CertificateState as CertificateState {
+as projection on ZI_CertificateState7 as CertificateState {
     key StateUUID,
     CertUUID,
 
@@ -19,3 +19,4 @@ as projection on ZI_CertificateState as CertificateState {
     /* Associations */
     _Certificate : redirected to parent ZC_Certificate
 } 
+
